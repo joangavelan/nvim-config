@@ -26,6 +26,8 @@ opt.signcolumn = "yes" -- always show sign column (prevents layout shifts with L
 opt.cursorline = true -- highlight current line
 opt.scrolloff = 8 -- keep context lines above and below cursor
 opt.wrap = false -- no line wrapping
+opt.laststatus = 0 -- hide statusline
+opt.ruler = false -- hide ruler
 
 -- Splits
 opt.splitright = true -- vertical splits open right
