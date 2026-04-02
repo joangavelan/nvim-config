@@ -44,3 +44,15 @@ opt.undofile = true -- persistent undo across sessions
 -- Performance
 opt.updatetime = 250 -- faster LSP response
 opt.timeoutlen = 300 -- faster which-key response
+
+-- Inline diagnostics
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = "●",
+		spacing = 4,
+	},
+	signs = true,
+	underline = true,
+	update_in_insert = false, -- only show after leaving insert mode
+	severity_sort = true,
+})
