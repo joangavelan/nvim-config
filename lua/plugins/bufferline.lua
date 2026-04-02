@@ -10,10 +10,11 @@ return {
 		event = "VeryLazy",
 		opts = {
 			options = {
+				indicator = { style = "none" },
 				diagnostics = "nvim_lsp",
 				show_buffer_close_icons = false,
 				show_close_icon = false,
-				separator_style = "thin",
+				separator_style = { "", "" },
 				offsets = {
 					{
 						filetype = "oil",
@@ -21,6 +22,19 @@ return {
 						highlight = "Directory",
 						text_align = "left",
 					},
+				},
+			},
+			highlights = {
+				buffer_selected = {
+					fg = "#e0def4",
+					bold = true,
+					italic = false,
+				},
+				background = {
+					fg = "#6c6882",
+				},
+				buffer_visible = {
+					fg = "#6c6882",
 				},
 			},
 		},

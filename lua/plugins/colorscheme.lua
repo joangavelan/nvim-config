@@ -5,12 +5,12 @@
 return {
 	"rose-pine/neovim",
 	name = "rose-pine",
-	lazy = false, -- load at startup so colorscheme is available immediately
-	priority = 1000, -- load before other plugins
+	lazy = false,
+	priority = 1000,
 	config = function()
 		require("rose-pine").setup({
-			variant = "auto", -- auto, main, moon, or dawn
-			dark_variant = "main", -- which variant to use when dark
+			variant = "auto",
+			dark_variant = "main",
 			styles = {
 				bold = true,
 				italic = true,
