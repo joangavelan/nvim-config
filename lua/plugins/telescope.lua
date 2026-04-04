@@ -16,6 +16,19 @@ return {
 		config = function()
 			local telescope = require("telescope")
 			local builtin = require("telescope.builtin")
+			local actions = require("telescope.actions")
+			local action_state = require("telescope.actions.state")
+
+			local function replace_current_buffer(prompt_bufnr)
+				local selected = action_state.get_selected_entry()
+				local filepath = selected and (selected.path or selected.filename)
+				actions.close(prompt_bufnr)
+				if filepath then
+					local cur_buf = vim.api.nvim_get_current_buf()
+					vim.cmd("edit " .. vim.fn.fnameescape(filepath))
+					vim.api.nvim_buf_delete(cur_buf, { force = false })
+				end
+			end
 
 			telescope.setup({
 				defaults = {
@@ -27,8 +40,9 @@ return {
 					},
 					mappings = {
 						i = {
-							["<Esc>"] = require("telescope.actions").close,
+							["<Esc>"] = actions.close,
 							["<C-u>"] = false,
+							["<M-o>"] = replace_current_buffer,
 						},
 					},
 				},
