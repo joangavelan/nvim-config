@@ -40,16 +40,22 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
--- Expert: official Elixir LSP
-vim.lsp.config("expert", {
-	cmd = { "expert", "--stdio" },
+-- ElixirLS
+vim.lsp.config("elixirls", {
+	cmd = { "/Users/macbookpro/.local/share/nvim/mason/bin/elixir-ls" },
 	root_markers = { "mix.exs", ".git" },
-	filetypes = { "elixir", "eelixir", "heex" },
+	filetypes = { "elixir", "heex" },
+	settings = {
+		elixirLS = {
+			dialyzerEnabled = false,
+			fetchDeps = false,
+		},
+	},
 })
 
 -- enable all servers
 vim.lsp.enable({
-	"expert",
+	"elixirls",
 	"ts_ls",
 	"cssls",
 	"tailwindcss",
