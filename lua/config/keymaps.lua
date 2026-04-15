@@ -39,6 +39,9 @@ map("n", "<S-Tab>", "<<", { noremap = true, desc = "Unindent line" })
 map("v", "<Tab>", ">gv", { noremap = true, desc = "Indent selection" })
 map("v", "<S-Tab>", "<gv", { noremap = true, desc = "Unindent selection" })
 
+-- search and replace
+map("n", "<leader>sr", ":%s///g<left><left><left>", { desc = "Search and replace" })
+
 -- =========================
 -- 💾 File
 -- =========================
