@@ -51,6 +51,9 @@ return {
 			-- Cmd+W to close buffer
 			vim.keymap.set({ "n", "i", "v" }, "<M-w>", "<cmd>bd<cr>", { desc = "Close buffer" })
 
+			-- Cmd+Shift+W to close all buffers
+			vim.keymap.set({ "n", "i", "v" }, "<M-W>", "<cmd>bufdo bd<cr>", { desc = "Close all buffers" })
+
 			-- Track closed buffers for reopen
 			local closed_buffers = {}
 
