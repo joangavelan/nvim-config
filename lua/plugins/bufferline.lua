@@ -43,13 +43,13 @@ return {
 
 			-- Cmd+number to jump to buffer (via Ghostty ESC sequences)
 			for i = 1, 9 do
-				vim.keymap.set("n", "<M-" .. i .. ">", function()
+				vim.keymap.set({ "n", "i", "v" }, "<M-" .. i .. ">", function()
 					require("bufferline").go_to(i, true)
 				end, { desc = "Go to buffer " .. i })
 			end
 
 			-- Cmd+W to close buffer
-			vim.keymap.set("n", "<M-w>", "<cmd>bd<cr>", { desc = "Close buffer" })
+			vim.keymap.set({ "n", "i", "v" }, "<M-w>", "<cmd>bd<cr>", { desc = "Close buffer" })
 
 			-- Track closed buffers for reopen
 			local closed_buffers = {}
@@ -63,8 +63,8 @@ return {
 				end,
 			})
 
-			-- Cmd+Shift+W to reopen last closed buffer
-			vim.keymap.set("n", "<M-T>", function()
+			-- Cmd+Shift+T to reopen last closed buffer
+			vim.keymap.set({ "n", "i", "v" }, "<M-T>", function()
 				if #closed_buffers == 0 then
 					vim.notify("No recently closed buffers", vim.log.levels.INFO)
 					return
