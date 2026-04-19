@@ -61,4 +61,5 @@ vim.lsp.enable({
 	"tailwindcss",
 	"sqlls",
 	"lua_ls",
+	"emmet_language_server",
 })
