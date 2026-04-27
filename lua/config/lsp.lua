@@ -73,8 +73,8 @@ vim.lsp.enable({
 	"ts_ls",
 	"cssls",
 	"tailwindcss",
-	"sqlls",
 	"lua_ls",
 	"emmet_language_server",
 	"gopls",
+	"postgres_lsp",
 })
