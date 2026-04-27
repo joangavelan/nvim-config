@@ -32,6 +32,10 @@ return {
 			"sql",
 			"markdown",
 			"bash",
+			"go",
+			"gomod",
+			"gowork",
+			"gosum",
 		}
 
 		local alreadyInstalled = require("nvim-treesitter.config").get_installed()

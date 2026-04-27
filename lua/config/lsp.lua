@@ -53,6 +53,20 @@ vim.lsp.config("elixirls", {
 	},
 })
 
+-- Golang LSP
+vim.lsp.config("gopls", {
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true,
+				shadow = true,
+			},
+			staticcheck = true,
+			gofumpt = true,
+		},
+	},
+})
+
 -- enable all servers
 vim.lsp.enable({
 	"elixirls",
@@ -62,4 +76,5 @@ vim.lsp.enable({
 	"sqlls",
 	"lua_ls",
 	"emmet_language_server",
+	"gopls",
 })

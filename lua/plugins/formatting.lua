@@ -21,6 +21,7 @@ return {
 					json = { "prettierd" },
 					markdown = { "prettierd" },
 					lua = { "stylua" },
+					go = { "gofumpt", "goimports" },
 				},
 				format_on_save = {
 					timeout_ms = 2000,
